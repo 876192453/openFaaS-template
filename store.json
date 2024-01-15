@@ -1,0 +1,472 @@
+{
+    "version": "0.0.1",
+    "functions": [
+    {
+        "title": "NodeInfo",
+        "name": "nodeinfo",
+        "author":"openfaas",
+        "description": "Get info about the container i.e. CPU count, hostname, OS, and uptime",
+        "images": {
+            "arm64": "ghcr.io/openfaas/nodeinfo:latest",
+            "armhf": "ghcr.io/openfaas/nodeinfo:latest",
+            "x86_64": "ghcr.io/openfaas/nodeinfo:latest"
+        },
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "env",
+        "name": "env",
+        "description": "Print the environment variables present in the function and HTTP request",
+        "author":"openfaas",
+        "images": {
+            "arm64": "ghcr.io/openfaas/alpine:latest",
+            "armhf": "ghcr.io/openfaas/alpine:latest",
+            "x86_64": "ghcr.io/openfaas/alpine:latest"
+        },
+        "fprocess": "env",
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "sleep",
+        "name": "sleep",
+        "author":"openfaas",
+        "description": "Simulate a 2s duration or pass an X-Sleep header and a valid Golang duration",
+        "images": {
+            "arm64": "ghcr.io/openfaas/sleep:latest",
+            "armhf": "ghcr.io/openfaas/sleep:latest",
+            "x86_64": "ghcr.io/openfaas/sleep:latest"
+        },
+        "readOnlyRootFilesystem": true,
+        "environment": {
+            "write_timeout": "60s"
+        },
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "shasum",
+        "name": "shasum",
+        "author":"openfaas",
+        "description": "Generate a shasum for the given input",
+        "images": {
+            "arm64": "ghcr.io/openfaas/alpine:latest",
+            "armhf": "ghcr.io/openfaas/alpine:latest",
+            "x86_64": "ghcr.io/openfaas/alpine:latest"
+        },
+        "fprocess": "sha512sum",
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "figlet",
+        "name": "figlet",
+        "author":"openfaas",
+        "description": "Generate ASCII logos with the figlet CLI",
+        "images": {
+            "arm64": "ghcr.io/openfaas/figlet:latest",
+            "armhf": "ghcr.io/openfaas/figlet:latest",
+            "x86_64": "ghcr.io/openfaas/figlet:latest"
+
+        },
+        "fprocess": "figlet",
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "printer",
+        "name": "printer",
+        "author":"openfaas",
+        "description": "Print out the HTTP headers and body of any invocation",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/printer:latest",
+            "arm64": "ghcr.io/openfaas/printer:latest",
+            "armhf": "ghcr.io/openfaas/printer:latest"
+        },
+        "readOnlyRootFilesystem": true,
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "curl",
+        "name": "curl",
+        "author":"openfaas",
+        "description": "Use curl for network diagnostics, pass the full command-line to the function",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/curl:latest",
+            "arm64": "ghcr.io/openfaas/curl:latest",
+            "armhf": "ghcr.io/openfaas/curl:latest"
+        },
+        "readOnlyRootFilesystem": true,
+        "environment": {
+            "write_timeout": "60s"
+        },
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "external-ip",
+        "name": "external-ip",
+        "author":"openfaas",
+        "description": "Find the egress IP used by a function",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/external-ip-fn:latest",
+            "arm64": "ghcr.io/openfaas/external-ip-fn:latest",
+            "armhf": "ghcr.io/openfaas/external-ip-fn:latest"
+        },
+        "readOnlyRootFilesystem": true,
+        "environment": {
+            "write_timeout": "60s"
+        },
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "youtube-dl",
+        "name": "youtube-dl",
+        "author":"openfaas",
+        "description": "Download a video from YouTube using youtube-dl",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/youtube-dl:latest",
+            "arm64": "ghcr.io/openfaas/youtube-dl:latest",
+            "armhf": "ghcr.io/openfaas/youtube-dl:latest"
+        },
+        "readOnlyRootFilesystem": true,
+        "repo_url": "https://github.com/openfaas/store-functions",
+        "labels": {
+            "com.openfaas.ui.ext": "mp4"
+        },
+        "environment": {
+            "read_timeout": "5m5s",
+            "write_timeout": "5m5s",
+            "exec_timeout": "5m"
+        }
+    },
+    {
+        "title": "SentimentAnalysis",
+        "author":"openfaas",
+        "description": "Python function provides a rating on sentiment positive/negative (polarity -1.0-1.0) and subjectivity to provided to each of the sentences sent.",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/sentimentanalysis:latest",
+            "arm64": "ghcr.io/openfaas/sentimentanalysis:latest",
+            "armhf": "ghcr.io/openfaas/sentimentanalysis:latest"
+        },
+        "name": "sentimentanalysis",
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "hey",
+        "name": "hey",
+        "author":"openfaas",
+        "description": "HTTP load generator, ApacheBench (ab) replacement",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/hey:latest",
+            "arm64": "ghcr.io/openfaas/hey:latest",
+            "armhf": "ghcr.io/openfaas/hey:latest"
+        },
+        "repo_url": "https://github.com/openfaas/store-functions",
+        "readOnlyRootFilesystem": true,
+        "environment": {
+            "write_timeout": "60s"
+        }
+    },
+    {
+        "title": "nslookup",
+        "author":"openfaas",
+        "description": "Query the nameserver for the IP address of the given HOST optionally using a specified DNS server",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/nslookup:latest",
+            "armhf": "ghcr.io/openfaas/nslookup:latest",
+            "arm64": "ghcr.io/openfaas/nslookup:latest"
+        },
+        "name": "nslookup",
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "SSL/TLS cert info",
+        "name": "certinfo",
+        "author":"stefanprodan",
+        "description": "Returns SSL/TLS certificate information for a given URL",
+        "icon": "https://raw.githubusercontent.com/stefanprodan/openfaas-certinfo/master/logo.png",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/certinfo-fn:latest",
+            "armhf": "ghcr.io/openfaas/certinfo-fn:latest",
+            "arm64": "ghcr.io/openfaas/certinfo-fn:latest"
+        },
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "Colorization",
+        "name": "colorise",
+        "author":"alexellis",
+        "description": "Turn black and white photos to color using a URL as the request. The colorization function was popularised by @colorisebot by Alex Ellis and Finnian Anderson.",
+        "icon": "https://pbs.twimg.com/profile_images/927538119901175814/4uhYwTyC_400x400.jpg",
+        "images": {
+            "x86_64": "alexellis2/openfaas-colorization:0.4.1"
+        },
+        "fprocess": "python -u index.py",
+        "repo_url": "https://github.com/alexellis/repaint-the-past",
+        "labels": {
+            "com.openfaas.ui.ext": "jpg"
+        },
+        "environment": {
+            "url_mode": "true",
+            "read_timeout": "60s",
+            "write_timeout": "60s",
+            "write_debug": "false"
+        }
+    },
+    {
+        "title": "Inception",
+        "name": "inception",
+        "author":"alexellis",
+        "description": "This is a forked version of the work by Magnus Erik Hvass Pedersen - it has been re-packaged as an OpenFaaS serverless function.",
+        "images": {
+            "x86_64": "alexellis/inception:2019-02-17"
+        },
+        "fprocess": "python3 index.py",
+        "repo_url": "https://github.com/faas-and-furious/inception-function",
+        "environment": {
+            "read_timeout": "60s",
+            "write_timeout": "60s"
+        }
+    },
+    {
+        "title": "alpine",
+        "name": "alpine",
+        "author":"openfaas",
+        "description": "An Alpine Linux shell, set the \"fprocess\" to a bash built-in you want to run like \"env\" or \"cal\". By default alpine runs \"cat\" and can be used to echo the HTTP input.",
+        "images": {
+            "arm64": "ghcr.io/openfaas/alpine:latest",
+            "armhf": "ghcr.io/openfaas/alpine:latest",
+            "x86_64": "ghcr.io/openfaas/alpine:latest"
+        },
+        "fprocess": "cat",
+        "repo_url": "https://github.com/openfaas/store-functions"
+    },
+    {
+        "title": "Face Detection with Pigo",
+        "author":"esimov",
+        "description": "Detect faces in images using the Pigo face detection library. You provide an image URI and the function draws boxes around the detected faces.",
+        "images": {
+            "x86_64": "esimov/pigo-openfaas:0.1"
+        },
+        "name": "face-detect-pigo",
+        "repo_url": "https://github.com/esimov/pigo-openfaas",
+        "readOnlyRootFilesystem": true,
+        "environment": {
+            "output_mode": "image",
+            "input_mode": "url"
+        },
+        "labels": {
+            "com.openfaas.ui.ext": "jpg"
+        }
+    },
+    {
+        "icon": "https://raw.githubusercontent.com/viveksyngh/openfaas-ocr/master/logo/ocr.png",
+        "title": "Tesseract OCR",
+        "author":"viveksyngh",
+        "description": "This function brings OCR - Optical Character Recognition through the tesseract engine. Just pass in a URL or base64 string of an image in .jpg or .png format.",
+        "images": {
+            "x86_64": "viveksyngh/openfaas-ocr:0.3.0"
+        },
+        "name": "ocr",
+        "repo_url": "https://github.com/viveksyngh/openfaas-ocr"
+    },
+    {
+        "icon": "https://raw.githubusercontent.com/faas-and-furious/qrcode/master/images/qrcode.png",
+        "title": "QR Code Generator - Go",
+        "author":"alexellis",
+        "description": "QR Code generator using Go",
+        "images": {
+            "x86_64": "alexellis/qrcode:0.1"
+        },
+        "name": "qrcode-go",
+        "repo_url": "https://github.com/faas-and-furious/qrcode",
+        "labels": {
+            "com.openfaas.ui.ext": "png"
+        }
+    },
+    {
+        "icon": "https://nmap.org/images/nmap-logo-256x256.png",
+        "title": "Nmap Security Scanner",
+        "author": "openfaas",
+        "description": "Tool for network discovery and security auditing.",
+        "images": {
+            "x86_64": "ghcr.io/openfaas/nmap:latest"
+        },
+        "name": "nmap",
+        "repo_url": "https://github.com/openfaas/store-function",
+        "environment": {
+            "read_timeout": "300s",
+            "write_timeout": "300s"
+        }
+    },
+    {
+        "title": "ASCII Cows",
+        "description": "Generate a random ASCII cow",
+        "author": "openfaas",
+        "images": {
+            "arm64": "ghcr.io/openfaas/cows:latest",
+            "armhf": "ghcr.io/openfaas/cows:latest",
+            "x86_64": "ghcr.io/openfaas/cows:latest"
+        },
+        "name": "cows",
+        "repo_url": "https://github.com/openfaas/store-functions",
+        "readOnlyRootFilesystem": true
+    },
+    {
+        "icon": "https://ssl.gstatic.com/translate/community/backgrounds/globe.png",
+        "title": "OpenFaaS Text-to-Speech",
+        "author": "rorpage",
+        "description": "Generate an MP3 of text using Google's Text-to-Speech",
+        "images": {
+            "x86_64": "rorpage/text-to-speech:latest",
+            "armhf": "rgee0/text-to-speech:armhf-latest"
+        },
+        "name": "text-to-speech",
+        "repo_url": "https://github.com/rorpage/openfaas-text-to-speech",
+        "labels": {
+            "com.openfaas.ui.ext": "mp3"
+          },
+        "environment": {
+            "read_timeout": "60s",
+            "write_timeout": "60s"
+        }
+    },
+    {
+        "title": "Docker Image Manifest Query",
+        "description": "Query an image on the Docker Hub for supported architectures - by Phil Estes",
+        "author": "rgee0",
+        "images": {
+            "x86_64": "rgee0/of-mquery:1.2",
+            "armhf": "rgee0/of-mquery:1.2"
+        },
+        "fprocess": "./mquery",
+        "name": "mquery",
+        "repo_url": "https://github.com/rgee0/mquery/tree/openfaaschanges"
+    },
+    {
+        "title": "face-detect with OpenCV",
+        "author": "alexellis",
+        "description": "Detect faces in images. Send a URL as input and download a file with boxes drawn around detected faces. From our friend Nic Jackson",
+        "images": {
+            "x86_64": "alexellis2/facedetect:0.1"
+        },
+        "name": "face-detect-opencv",
+        "repo_url": "https://github.com/alexellis/facedetect-openfaas",
+        "readOnlyRootFilesystem": true,
+        "environment": {
+            "output_mode": "image",
+            "input_mode": "url"
+        },
+        "labels": {
+            "com.openfaas.ui.ext": "jpg"
+        }
+    },
+    {
+        "title": "Face blur by Endre Simo",
+        "description": "Blur out faces detected in JPEGs. Invoke with the URL to the image.",
+        "author": "esimov",
+        "images": {
+            "x86_64": "esimov/pigo-openfaas-faceblur:0.1"
+        },
+        "name": "face-blur",
+        "repo_url": "https://github.com/esimov/pigo-openfaas-faceblur",
+        "readOnlyRootFilesystem": true,
+        "environment": {
+            "output_mode": "image",
+            "input_mode": "url",
+            "content_type": "image/jpeg"
+        },
+        "labels": {
+            "com.openfaas.ui.ext": "jpg"
+        }
+    },
+    {
+        "title": "normalisecolor",
+        "author": "alexellis",
+        "description": "Automatically fix white-balance in photos through imagemagick.",
+        "images": {
+            "x86_64": "alexellis2/normalisecolor:0.2.1"
+        },
+        "icon": "https://github.com/alexellis/repaint-the-past/raw/master/normalise-color-icon.png",
+        "name": "normalisecolor",
+        "repo_url": "https://github.com/alexellis/repaint-the-past",
+        "readOnlyRootFilesystem": false
+    },
+    {
+        "title": "Line Drawing Generator from a photograph",
+        "description": "Automatically generates a sketch like image art based on the provided image",
+        "author": "esimov",
+        "images": {
+            "x86_64": "esimov/colidr-openfaas:0.1"
+        },
+        "name": "coherent-line-drawing",
+        "repo_url": "https://github.com/esimov/openfaas-coherent-line-drawing",
+        "readOnlyRootFilesystem": true,
+        "environment": {
+		    "input_mode": "url",
+		    "output_mode": "image",
+		    "content_type": "image/jpeg",
+		    "write_timeout": "300s"
+		},
+	    "labels": {
+		    "com.openfaas.ui.ext": "jpg"
+	    }
+    },
+    {
+        "title": "Image EXIF Reader",
+        "author": "servernull",
+        "description": "Reads EXIF information from an URL or base64 encoded image and returns JSON",
+        "images": {
+            "x86_64": "servernull/openfaas-exif:0.1.0"
+        },
+        "name": "openfaas-exif",
+        "repo_url": "https://github.com/servernull/openfaas-exif"
+    },
+    {
+        "title": "Open NSFW Model",
+        "author": "servernull",
+        "description": "Score images for NSFW (nudity) content.",
+        "images": {
+            "x86_64": "servernull/openfaas-opennsfw:0.1.0"
+        },
+        "name": "openfaas-opennsfw",
+        "repo_url": "https://github.com/servernull/openfaas-opennsfw"
+    },
+    {
+        "title": "Identicon Generator",
+        "author": "rgee0",
+        "description": "Create an identicon from a provided string value",
+        "images": {
+            "x86_64": "rgee0/identicon:1.0",
+            "armhf": "rgee0/identicon:1.0"
+        },
+        "icon": "https://raw.githubusercontent.com/rgee0/openfaas-identicon/master/sample/openfaas.png",
+        "name": "identicon",
+        "repo_url": "https://github.com/rgee0/openfaas-identicon",
+        "readOnlyRootFilesystem": true,
+        "environment": {
+		    "content_type": "image/png",
+		    "write_timeout": "10s"
+		},
+	    "labels": {
+		    "com.openfaas.ui.ext": "png"
+	    }
+    },
+    {
+        "title": "chaos",
+        "name": "chaos",
+        "author": "alexellis",
+        "description": "A function for chaos testing with OpenFaaS",
+        "images": {
+            "x86_64": "alexellis2/chaos-fn:0.1.1"
+        },
+        "environment": {
+            "write_timeout": "5m31s",
+            "read_timeout": "5m31s",
+            "exec_timeout": "5m30s"
+        },
+        "labels": {
+            "com.openfaas.min.scale": "1",
+            "com.openfaas.max.scale": "1"
+        },
+        "repo_url": "https://github.com/alexellis/chaos-fn",
+        "readOnlyRootFilesystem": true
+    }
+  ]
+}
